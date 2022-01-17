@@ -25,11 +25,10 @@ public class MemberService {
     }
 
     public Long join(Member member)//회원가입
-    {
-        //같은 이름이 있는 중복 회원
-        validateDuplicateMember(member); // 중복회원 검증
-        memberRepository.save(member); // 통과하면 저장
-        return member.getId();
+    {//같은 이름이 있는 중복 회원
+            validateDuplicateMember(member); // 중복 회원 검증
+            memberRepository.save(member); // 통과하면 저장
+            return member.getId(); //왜 리턴하는걸까?
     }
 
     public List<Member> findMembers()
